@@ -1,0 +1,174 @@
+/* Green & White Professional Styling for Dashboard */
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.sidebar-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #28a745;
+}
+
+.logo {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.workspace-box {
+  background-color: #f4f4f4;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.sidebar-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #888;
+  margin: 0.75rem 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-menu li:hover {
+  background-color: #e9f5ee;
+  transform: scale(1.02);
+  color: #28a745;
+}
+
+.icon {
+  font-size: 1rem;
+  color: #28a745;
+}
+
+.dashboard-content {
+  background-color: #f0f2f5;
+  color: #333;
+  padding: 2rem;
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.dashboard-card h1 {
+  font-size: 1.75rem;
+  color: #28a745;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.balance {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #000;
+}
+
+.pay-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pay-button:hover {
+  background-color: #34c759;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.quick-links div {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.quick-links div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ Fix for active/selected sidebar items if Angular encapsulation blocks sidecar styles */
+.sidebar-menu li.active,
+.sidebar-menu li.selected {
+  background-color: #d1fae5 !important; /* light green */
+  color: #28a745 !important;
+  font-weight: 600;
+}
+
+.sidebar-menu li.active .icon,
+.sidebar-menu li.selected .icon {
+  color: #28a745 !important;
+}

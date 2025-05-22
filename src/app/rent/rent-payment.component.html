@@ -1,0 +1,70 @@
+<div class="min-h-screen bg-black text-white flex">
+  <!-- Sidebar -->
+  <aside class="w-60 bg-gray-900 p-4">
+    <div class="text-xl font-bold mb-8">Resident Community</div>
+    <ul class="space-y-4">
+      <li class="font-semibold">Home</li>
+      <li>
+        <details>
+          <summary class="cursor-pointer font-semibold">Community</summary>
+          <ul class="ml-4 text-sm space-y-1">
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Clubs</a></li>
+            <li><a href="#">Amenities</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary class="cursor-pointer font-semibold">Payments</summary>
+          <ul class="ml-4 text-sm space-y-1">
+            <li><a routerLink="/rent">Rent Payment</a></li>
+            <li><a href="#">Manage Wallet</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>Messages & Alerts</li>
+      <li>Contact Property</li>
+      <li class="mt-4 font-semibold">My Apartment</li>
+      <li class="ml-2">Maintenance</li>
+      <li class="ml-2">Documents</li>
+      <li class="ml-2">Emergency Contacts</li>
+      <li class="ml-2">Inspections</li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-8">
+    <h1 class="text-2xl font-bold mb-4">Home</h1>
+
+    <div class="bg-gray-800 p-6 rounded-xl mb-6">
+      <p class="text-sm text-gray-400">No Amount Due</p>
+      <h2 class="text-3xl font-bold">$0.00</h2>
+      <p class="text-sm mt-2">Automatic Payments: <span class="text-red-500 font-bold">Off</span></p>
+      <div class="mt-2 text-sm text-blue-400 cursor-pointer">Manage Wallet</div>
+      <button routerLink="/rent" class="mt-4 bg-white text-black py-1 px-4 rounded-full">Pay Now</button>
+    </div>
+
+    <div class="flex items-center gap-4 mb-4">
+      <button class="bg-gray-700 px-4 py-2 rounded-full">Quick Links Dashboard</button>
+      <span>Announcements</span>
+      <span>Events</span>
+      <span>Clubs</span>
+      <span>Amenities</span>
+    </div>
+
+    <div class="mt-4">
+      <h2 class="text-lg font-bold mb-2">Quick Links</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+        <div>Contact Us</div>
+        <div>View Documents</div>
+        <div>Reserve an Amenity</div>
+        <div>Refer a Friend</div>
+        <div>Give Us a Review</div>
+        <div>Split Your Rent Payment</div>
+        <div>Resident Services</div>
+      </div>
+    </div>
+  </main>
+</div>

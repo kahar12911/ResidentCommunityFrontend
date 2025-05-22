@@ -1,0 +1,65 @@
+<div class="container">
+  <form (ngSubmit)="register()" #registerForm="ngForm">
+    <div class="form-header">
+      <img src="assets/logo.png" alt="SmartAvaas Logo" class="logo" />
+      <h2>Create Your Account</h2>
+    </div>
+
+    <!-- First Name -->
+    <div class="form-group-vertical">
+      <label for="firstName">First Name</label>
+      <input [(ngModel)]="firstName" name="firstName" id="firstName" type="text" required #firstNameRef="ngModel" />
+      <div *ngIf="firstNameRef.invalid && firstNameRef.touched" class="error-message">First name is required.</div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group-vertical">
+      <label for="lastName">Last Name</label>
+      <input [(ngModel)]="lastName" name="lastName" id="lastName" type="text" required #lastNameRef="ngModel" />
+      <div *ngIf="lastNameRef.invalid && lastNameRef.touched" class="error-message">Last name is required.</div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="form-group-vertical">
+      <label for="mobile">Mobile</label>
+      <input [(ngModel)]="mobile" name="mobile" id="mobile" type="text" required #mobileRef="ngModel" />
+      <div *ngIf="mobileRef.invalid && mobileRef.touched" class="error-message">Mobile number is required.</div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group-vertical">
+      <label for="password">Password</label>
+      <div class="relative">
+        <input [(ngModel)]="password" name="password" id="password"
+               [type]="showPassword ? 'text' : 'password'" required #passwordRef="ngModel"
+               class="password-input" />
+        <span (click)="togglePassword()">{{ showPassword ? 'Hide' : 'Show' }}</span>
+      </div>
+      <div *ngIf="passwordRef.invalid && passwordRef.touched" class="error-message">Password is required.</div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group-vertical">
+      <label for="confirmPassword">Confirm Password</label>
+      <input [(ngModel)]="confirmPassword" name="confirmPassword" id="confirmPassword" type="password" required />
+    </div>
+
+    <!-- Register Button -->
+    <button class="action-button" [disabled]="isSubmitting">
+      <span *ngIf="!isSubmitting">Register</span>
+      <span *ngIf="isSubmitting" class="spinner"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="form-links">
+      <a routerLink="/login">Already have an account?</a>
+      <span>|</span>
+      <a routerLink="/forgot-password">Forgot Password?</a>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="success" class="toast">
+  Registration successful! Redirecting to login...
+</div>
+

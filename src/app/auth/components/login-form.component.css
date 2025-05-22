@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f0f2f5;
   margin: 0;
-  padding: 0; /* Removed 2rem padding to avoid global spacing issue */
+  padding: 2rem;
   min-height: 100vh;
 }
 
@@ -13,14 +13,14 @@ body {
   text-align: center;
 }
 
-.logo h1 {
+h1 {
   color: #28a745;
   font-size: 48px;
   margin-bottom: 20px;
 }
 
 form {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
   width: 100%;
@@ -32,28 +32,59 @@ form {
 .form-group-vertical {
   display: flex;
   flex-direction: column;
-  text-align: left;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
-label {
+.form-group-vertical label {
   font-size: 14px;
   color: #555;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-input {
+.form-group-vertical input {
   font-size: 15px;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  width: 100%;
   box-sizing: border-box;
 }
 
 input:focus {
   outline: none;
   border-color: #28a745;
-  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2); /* Updated green shadow */
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+
+button {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+a {
+  color: #28a745;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 12px;
+  margin-right: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .relative {
@@ -62,7 +93,12 @@ input:focus {
   align-items: center;
 }
 
+.relative input {
+  flex: 1;
+}
+
 .relative span {
+  user-select: none;
   position: absolute;
   right: 16px;
   top: 50%;
@@ -72,7 +108,7 @@ input:focus {
   cursor: pointer;
 }
 
-button {
+.action-button {
   background-color: #28a745;
   border: none;
   padding: 10px 16px;
@@ -84,31 +120,32 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.2s ease;
   margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button:hover {
+.action-button:hover {
   background-color: #34c759;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-button:disabled {
+.action-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-a {
-  color: #28a745;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 12px;
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-.error-message {
-  font-size: 12px;
-  color: #e53935;
-  margin-top: 4px;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

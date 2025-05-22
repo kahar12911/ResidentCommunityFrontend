@@ -1,0 +1,126 @@
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <span class="logo">SMARTAVAAS</span>
+  </div>
+
+  <div class="sidebar-section">
+    <p class="sidebar-label">UNIT</p>
+    <div class="workspace-box">
+      <span>Unit 162 - D</span>
+    </div>
+  </div>
+
+  <nav class="sidebar-menu" role="navigation" aria-label="Sidebar navigation">
+    <ul>
+      <!-- Home -->
+      <li>
+        <a routerLink="/dashboard" routerLinkActive="active" class="menu-link">
+          <i class="icon" aria-hidden="true">🏠</i> Home
+        </a>
+      </li>
+
+      <!-- Community Dropdown -->
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          (click)="toggleCommunity()"
+          [attr.aria-expanded]="communityOpen"
+          aria-controls="community-submenu"
+          type="button"
+        >
+          <span class="left">
+            <i class="icon" aria-hidden="true">👥</i>
+            <span>Community</span>
+          </span>
+          <i class="arrow" [class.rotate]="communityOpen" aria-hidden="true">▶</i>
+        </button>
+        <ul
+          id="community-submenu"
+          *ngIf="communityOpen"
+          class="submenu-items"
+          role="menu"
+        >
+          <li role="none">
+            <a routerLink="/events" routerLinkActive="active" class="submenu-link" role="menuitem">🎉 Events</a>
+          </li>
+          <li role="none">
+            <a routerLink="/amenities" routerLinkActive="active" class="submenu-link" role="menuitem">🏊 Amenities</a>
+          </li>
+          <li role="none">
+            <a routerLink="/clubs" routerLinkActive="active" class="submenu-link" role="menuitem">🤝 Clubs</a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Payments Dropdown -->
+      <li class="has-submenu">
+        <button
+          class="submenu-toggle"
+          (click)="togglePayments()"
+          [attr.aria-expanded]="paymentsOpen"
+          aria-controls="payments-submenu"
+          type="button"
+        >
+          <span class="left">
+            <i class="icon" aria-hidden="true">💳</i>
+            <span>Payments</span>
+          </span>
+          <i class="arrow" [class.rotate]="paymentsOpen" aria-hidden="true">▶</i>
+        </button>
+        <ul
+          id="payments-submenu"
+          *ngIf="paymentsOpen"
+          class="submenu-items"
+          role="menu"
+        >
+          <li role="none">
+            <a routerLink="/wallet" routerLinkActive="active" class="submenu-link" role="menuitem">👛 Wallet</a>
+          </li>
+          <li role="none">
+            <a routerLink="/autopay" routerLinkActive="active" class="submenu-link" role="menuitem">🔁 Auto Payment</a>
+          </li>
+          <li role="none">
+            <a routerLink="/ledger" routerLinkActive="active" class="submenu-link" role="menuitem">📘 Ledger</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p class="sidebar-label">MY APARTMENT</p>
+    <ul>
+      <li>
+        <a routerLink="/maintenance" routerLinkActive="active" class="menu-link">
+          <i class="icon" aria-hidden="true">🛠</i> Maintenance
+        </a>
+      </li>
+      <li>
+        <a routerLink="/documents" routerLinkActive="active" class="menu-link">
+          <i class="icon" aria-hidden="true">📄</i> Documents
+        </a>
+      </li>
+      <li>
+        <a routerLink="/emergency" routerLinkActive="active" class="menu-link">
+          <i class="icon" aria-hidden="true">🚨</i> Emergency Contacts
+        </a>
+      </li>
+      <li>
+        <a routerLink="/inspections" routerLinkActive="active" class="menu-link">
+          <i class="icon" aria-hidden="true">✅</i> Inspections
+        </a>
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <a routerLink="/settings" routerLinkActive="active" class="menu-link">
+          <i class="icon" aria-hidden="true">⚙️</i> Settings
+        </a>
+      </li>
+      <li>
+        <a routerLink="/support" routerLinkActive="active" class="menu-link">
+          <i class="icon" aria-hidden="true">❓</i> Help & Support
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>

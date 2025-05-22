@@ -1,0 +1,95 @@
+:host {
+  display: block;
+  width: 250px;
+  background-color: #ffffff; /* ✅ updated */
+  color: #333;               /* ✅ updated */
+  height: 100vh;
+  position: relative;
+}
+
+/* Sidebar structure */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff; /* ✅ updated */
+  color: #333;               /* ✅ updated */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08); /* ✅ softened */
+  z-index: 50;
+  transition: all 0.3s ease-in-out; /* ✅ smooth animation */
+}
+
+/* Content container beside sidebar */
+.dashboard-content {
+  margin-left: 250px;
+  padding: 2rem;
+  background: #f0f2f5; /* ✅ updated */
+  color: #333;         /* ✅ updated */
+  min-height: 100vh;
+  width: calc(100% - 250px);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.sidebar-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #28a745; /* ✅ updated */
+}
+
+.logo {
+  color: #28a745;     /* ✅ updated */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.workspace-box {
+  background-color: #f4f4f4; /* ✅ updated */
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+  color: #333;              /* ✅ updated */
+}
+
+.sidebar-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #888; /* ✅ updated */
+  margin: 0.75rem 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-menu li:hover {
+  background-color: #e9f5ee; /* ✅ green-themed hover */
+  transform: scale(1.02);
+  color: #28a745;
+}
+
+.icon {
+  font-size: 1rem;
+  color: #28a745; /* ✅ updated */
+}
